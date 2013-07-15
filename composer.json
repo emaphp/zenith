@@ -1,0 +1,5 @@
+{
+	"require": {
+		"zenith/zenith": "dev-master"
+	}
+}
