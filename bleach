@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+//include bootstrap file
+require 'bootstrap/start.php';
+
+//set up cli
+$cli = new Zenith\CLI\BleachCLI();
+$cli->build_cli_commands();
+
+//run application
+$cli->run();
+
+exit(0);

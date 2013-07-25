@@ -1,27 +1,16 @@
 <?php
-$config = array(/**
-				 * WSDL generation service
-				 */
-				'service' => 'Zenith\WSDL\DefaultWSDLService',
+/**
+ * WSDL generation options
+ */
+$config = array(
+	/**
+	 * WSDL template
+	 */
+	'template' => 'application-wsdl',
 				
-				/**
-				 * WSDL template
-				 */
-				'template' => 'service-wsdl',
-				
-				/**
-				 * Template parameters
-				 * Additional parameters for WSDL template
-				 */
-				'template_params' => null,
-				
-				/**
-				 * Cache interface
-				 */
-				'cache' => null,
-		
-				/**
-				 * Cache parameters
-				 */
-				'cache_params' => false
+	/**
+	 * Template parameters
+	 * Additional parameters for WSDL template
+	 */
+	'args' => array('uri' => 'http://my-domain.com/service.php')
 );
