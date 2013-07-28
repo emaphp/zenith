@@ -2,16 +2,15 @@
 /**
  * Zenith main configuration file ('production' environment)
  */
-$config = array(
+return array(
 		/**
 		 * Application dependencies
 		 * Additional dependencies for the Bleach\Application class (property => class)
 		 */
-		'inject' => array('logger' => 'Zenith\Log\ProductionLogger',
-						  'event'  => 'Zenith\Event\EventManager'),
+		'inject' => array('logger' => 'Zenith\Log\ProductionLogger'),
 		/**
 		 * Twig configuration
 		 * Configuration vars for Twig
 		 */
-		'twig' => array('cache' => TWIG_DIR)
+		'twig' => array('cache' => Zenith\Application::getInstance()->path('twig'))
 );

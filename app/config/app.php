@@ -2,7 +2,7 @@
 /**
  * Zenith main configuration file
  */
-$config = array(		
+return array(		
 		/**
 		 * Dispatcher class
 		 * This class implements the method declared in the WSDL

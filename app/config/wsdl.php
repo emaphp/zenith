@@ -2,7 +2,7 @@
 /**
  * WSDL generation options
  */
-$config = array(
+return array(
 	/**
 	 * WSDL template
 	 */
