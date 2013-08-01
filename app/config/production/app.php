@@ -7,7 +7,8 @@ return array(
 		 * Application dependencies
 		 * Additional dependencies for the Bleach\Application class (property => class)
 		 */
-		'inject' => array('logger' => 'Zenith\Log\ProductionLogger'),
+		'logger' => 'Zenith\Log\ProductionLogger',
+		
 		/**
 		 * Twig configuration
 		 * Configuration vars for Twig

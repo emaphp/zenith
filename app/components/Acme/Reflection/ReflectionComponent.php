@@ -1,5 +1,5 @@
 <?php
-namespace Acme;
+namespace Acme\Reflection;
 
 class ReflectionComponent {
 	/**

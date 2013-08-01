@@ -19,11 +19,6 @@ return array(
 			 'config' => 'app/config/',
 		
 			 /**
-			  * Services directory
-			  */
-			 'services' => 'app/services/',
-		
-			 /**
 			  * Components directory
 			  */
 			 'components' => 'app/components/',

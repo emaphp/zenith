@@ -4,7 +4,7 @@ namespace Acme;
 use Zenith\Service;
 use Zenith\SOAP\Request;
 use Zenith\SOAP\Response;
-use Zenith;
+use Zenith\Exception\ServiceException;
 
 class HelloWorld extends Service {
 	/**
@@ -51,7 +51,7 @@ class HelloWorld extends Service {
 	 * Obtains class public methods through the Acme/ReflectionComponent class
 	 */
 	public function expose(Request $request, Response $response) {
-		$component = new ReflectionComponent();
+		$component = new Reflection\ReflectionComponent();
 		$data = $component->getServiceData(get_class($this));
 		return $this->view->render('Acme/expose', $data);
 	}
@@ -71,6 +71,18 @@ class HelloWorld extends Service {
 		//set response status and result
 		$response->setStatus(0, 'XML parsed correctly');
 		$response->setResult($this->view->render('Acme/user', array('user_id' => $user_id, 'user_name' => $name->nodeValue)));
+	}
+	
+	public function throw_fault(Request $request, Response $response) {
+		throw new \SoapFault("Server", "Unexpected error");
+	}
+	
+	public function throw_exception(Request $request, Response $response) {
+		throw new \Exception("Something bad happened...");
+	}
+	
+	public function throw_service_exception(Request $request, Response $response) {
+		throw new ServiceException(5, "A customized error response");
 	}
 }
 ?>
