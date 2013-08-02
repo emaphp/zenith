@@ -45,13 +45,15 @@ class HelloWorld extends Service {
 	 *                 <method xsi:type="xsd:string">sayHi</method>
 	 *             </service>
 	 *             <configuration xsi:type="urn:Configuration"/>
-	 *             <parameter xsi:type="urn:Parameter"/>
+	 *             <parameter xsi:type="urn:Parameter">World</parameter>
 	 *         </urn:execute>
 	 *     </soapenv:Body>
 	 * </soapenv:Envelope>
 	 */
 	public function sayHi(Request $request, Response $response) {
-		return $this->view->render('Acme/hello_world', array('message' => 'Hello World!!!', 'destination' => 'Earth'));
+		//get parameter as a simple string
+		$to = $request->getParameter();
+		return "Hello $to!!!";
 	}
 
 	/**
@@ -91,7 +93,7 @@ class HelloWorld extends Service {
 			\Zenith\Application::getInstance()->logger->addNotice("Unrecognized language '$lang'");
 		}
 		
-		return $this->view->render('Acme/hello_world', $args);
+		return $this->view->render('Acme/goodbye', $args);
 	}
 	
 	/**
