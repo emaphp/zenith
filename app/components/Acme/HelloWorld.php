@@ -82,7 +82,7 @@ class HelloWorld extends Service {
 	 */
 	public function sayGoodbye(Request $request, Response $response) {
 		//obtain option 'lang'
-		$lang = $request->option('lang');
+		$lang = $request->getOption('lang');
 		$args = array('message' => 'Goodbye World!!!', 'destination' => 'Earth');
 		
 		if ($lang == 'sp') {

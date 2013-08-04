@@ -7,7 +7,7 @@ return array(
 		 * Dispatcher class
 		 * This class implements the method declared in the WSDL
 		 */
-		'dispatcher' => 'Zenith\SOAP\Dispatcher',
+		'dispatcher' => 'Zenith\Dispatcher\Dispatcher',
 		
 		/**
 		 * Application namespaces
