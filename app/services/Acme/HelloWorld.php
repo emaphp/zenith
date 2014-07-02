@@ -1,12 +1,12 @@
 <?php
 namespace Acme;
 
-use Zenith\Service;
+use Zenith\SOAPService;
 use Zenith\SOAP\Request;
 use Zenith\SOAP\Response;
-use Zenith\Exception\ServiceException;
+use Zenith\Exception\SOAPServiceException;
 
-class HelloWorld extends Service {
+class HelloWorld extends SOAPService {
 	/**
 	 * Generic response
 	 * @param Request $request
@@ -83,14 +83,14 @@ class HelloWorld extends Service {
 	public function sayGoodbye(Request $request, Response $response) {
 		//obtain option 'lang'
 		$lang = $request->getOption('lang');
-		$args = array('message' => 'Goodbye World!!!', 'destination' => 'Earth');
+		$args = ['message' => 'Goodbye World!!!', 'destination' => 'Earth'];
 		
 		if ($lang == 'sp') {
-			$args = array('message' => 'Adios Mundo!!!', 'destination' => 'Tierra');
+			$args = ['message' => 'Adios Mundo!!!', 'destination' => 'Tierra'];
 		}
 		elseif (!empty($lang) && $lang != 'en') {
 			//log notice
-			\Zenith\Application::getInstance()->logger->addNotice("Unrecognized language '$lang'");
+			$this->logger->addNotice("Unrecognized language '$lang'");
 		}
 		
 		return $this->view->render('Acme/goodbye', $args);
@@ -154,7 +154,7 @@ class HelloWorld extends Service {
 		
 		//set response status and result
 		$response->setStatus(0, 'XML parsed correctly');
-		$response->setResult($this->view->render('Acme/user', array('user_id' => $user_id, 'user_name' => $name->nodeValue)));
+		$response->setResult($this->view->render('Acme/user', ['user_id' => $user_id, 'user_name' => $name->nodeValue]));
 	}
 	
 	/**
@@ -226,7 +226,7 @@ class HelloWorld extends Service {
 	 * </soapenv:Envelope>
 	 */
 	public function throw_service_exception(Request $request, Response $response) {
-		throw new ServiceException(5, "A customized error response");
+		throw new SOAPServiceException(5, "A customized error response");
 	}
 }
 ?>

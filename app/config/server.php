@@ -2,7 +2,7 @@
 /**
  * SOAP server configuration file
  */
-return array(
+return [
 		/**
 		 * Server WSDL file
 		 */
@@ -12,5 +12,5 @@ return array(
 		 * Server options
 		 * Additional configuration for SoapServer instance
 		 */
-		'options' => array()
-);
+		'options' => []
+];

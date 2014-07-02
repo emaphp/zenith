@@ -2,48 +2,14 @@
 /**
  * Zenith application directories
  */
-return array(
-			 /**
-			  * Current working directory
-			  */
-			 'current' => getcwd(),
-		
-			 /**
-			  * Application directory
-			  */
-			 'app' => 'app/',
-		
-			 /**
-			  * Configuration directory
-			  */
-			 'config' => 'app/config/',
-		
-			 /**
-			  * Components directory
-			  */
-			 'components' => 'app/components/',
-		
-			 /**
-			  * Views directory
-			  */
-			 'views' => 'app/views/',
-		
-			 /**
-			  * Application storage
-			  */
-			 'storage' => 'app/storage/',
-		
-			 /**
-			  * WSDL directory
-			  */
-			 'wsdl' => 'app/storage/wsdl/',
-		
-			 /**
-			  * Application logs
-			  */
-			 'logs' => 'app/storage/logs/',
-		
-			 /**
-			  * Cached templates directory
-			  */
-			 'twig' => 'app/storage/twig');
+return [
+		'current'  => getcwd(),            // current working directory
+		'app'      => 'app/',              // application directory
+		'config'   => 'app/config/',       //configuration directory
+		'services' => 'app/services/',     // services directory
+		'views'    => 'app/views/',        // views directory
+		'storage'  => 'app/storage/',      // application storage directory
+		'wsdl'     => 'app/storage/wsdl/', // wdsl directory
+		'logs'     => 'app/storage/logs/', // logs directory
+		'twig'     => 'app/storage/twig'   // cached templates directory
+];

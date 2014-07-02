@@ -48,7 +48,8 @@ h1 {
 <div class="container">
 	<div class="header">
 		<h1>zenith</h1>
-		<p>The PHP SOAP Framework
+		<p>The PHP SOAP Framework</p>
+		<small>Version: <?php echo ZENITH_VERSION; ?></small>
 	</div>
 </div>
 </body>

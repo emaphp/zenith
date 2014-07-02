@@ -2,7 +2,7 @@
 /**
  * WSDL generation options
  */
-return array(
+return [
 	/**
 	 * WSDL template
 	 */
@@ -12,5 +12,5 @@ return array(
 	 * Template parameters
 	 * Additional parameters for WSDL template
 	 */
-	'args' => array('uri' => 'http://my-domain.com/service.php')
-);
+	'args' => ['uri' => 'http://my-domain.com/service.php']
+];
