@@ -1,5 +1,5 @@
 {
 	"require": {
-		"zenith/zenith": "2.0.*@dev"
+		"zenith/zenith": "~2.0.*"
 	}
 }
