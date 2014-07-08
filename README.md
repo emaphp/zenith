@@ -5,7 +5,7 @@ The PHP-SOAP Framework
 <br/>
 
 **Author**: Emmanuel Antico<br/>
-**Last Modification**: 2014/07/09<br/>
+**Last Modification**: 2014/07/08<br/>
 **Version**: 1.1.0
 
 Introduction
@@ -69,9 +69,16 @@ Setup
 -----
 
 <br/>
-- In order to store logs and templates the webserver must have write access to some folders
-```
+In order to store logs and templates the webserver must have write access to some folders.
+
+```bash
 $ sudo chown :www-data app/store/logs app/store/twig
+```
+
+If you're working with nginx and that doesn't work try setting the user.
+
+```bash
+$ sudo chown www-data:www-data app/store/logs app/store/twig
 ```
 
 <br/>
@@ -274,7 +281,7 @@ You can add your own configuration scripts, as long as they respect the same syn
 // Options used by the weather service
 
 return [
-    'degrees' => 'F' // return values in Farenheit
+    'scale' => 'F' // return values in Farenheit
 ];
 ```
 Getting those values requires obtaining the current application instance.
@@ -284,7 +291,7 @@ Getting those values requires obtaining the current application instance.
 use Zenith\Application;
 
 $config = Application::getInstance()->load_config('temperature');
-$scale = $config['degrees'];
+$scale = $config['scale'];
 ```
 
 <br/>
@@ -295,6 +302,24 @@ Views are files used to render a response. Zenith supports 2 types of views:
 
 - Generic views: These views are regular PHP scripts that receive their parameters from within a service. They must be named with the *.php* extension.
 - Twig views: Twig is a popular template engine for PHP. All Twig views must have a *.twig* extension. Check out the Twig documentation site to know how to design your own templates.
+
+<br/>
+Calling a view is pretty straightforward, just call the *render* method in the *view* component. Arguments need to be passed as an array.
+
+```php
+return $this->view->render('product', ['id' => 3526, 'name' => 'Red dress', 'size' => 'S']);
+```
+
+<br/>
+Logs
+-----
+<br/>
+All services are initialized with a *Monolog\Logger* instance. Log messages are stored according with the message level of the current environment.
+
+```php
+// add notice
+$this->logger->addNotice("Something happened...");
+```
 
 <br/>
 The HelloWorld service
