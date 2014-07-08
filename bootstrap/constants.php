@@ -1,3 +1,3 @@
 <?php
 //application version
-define('ZENITH_VERSION', '2.0');
+define('ZENITH_VERSION', '1.1');
