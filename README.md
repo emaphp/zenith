@@ -5,8 +5,8 @@ The PHP-SOAP Framework
 <br/>
 
 **Author**: Emmanuel Antico<br/>
-**Last Modification**: 2014/07/08<br/>
-**Version**: 1.1.0
+**Last Modification**: 2014/10/15<br/>
+**Version**: 2.0
 
 Introduction
 ------------
@@ -138,8 +138,8 @@ use Zenith\SOAPService;
 /**
  * Dependencies (add more providers to inject object properties):
  *
- * @inject.provider Zenith\IoC\Provider\ViewServiceProvider
- * @inject.provider Zenith\IoC\Provider\LoggerServiceProvider
+ * @Provider Zenith\IoC\Provider\ViewServiceProvider
+ * @Provider Zenith\IoC\Provider\LoggerServiceProvider
  */
 class MyService extends SOAPService {
 }
@@ -167,8 +167,8 @@ use Zenith\SOAP\Response;
 /**
  * Dependencies (add more providers to inject object properties):
  *
- * @inject.provider Zenith\IoC\Provider\ViewServiceProvider
- * @inject.provider Zenith\IoC\Provider\LoggerServiceProvider
+ * @Provider Zenith\IoC\Provider\ViewServiceProvider
+ * @Provider Zenith\IoC\Provider\LoggerServiceProvider
  */
 class MyService extends SOAPService {
 	public function makeCoffee(Request $request, Response $response) {
@@ -200,8 +200,8 @@ use Zenith\SOAP\Response;
 /**
  * Dependencies (add more providers to inject object properties):
  *
- * @inject.provider Zenith\IoC\Provider\ViewServiceProvider
- * @inject.provider Zenith\IoC\Provider\LoggerServiceProvider
+ * @Provider Zenith\IoC\Provider\ViewServiceProvider
+ * @Provider Zenith\IoC\Provider\LoggerServiceProvider
  */
 class MyService extends SOAPService {
 	public function makeCoffee(Request $request, Response $response) {

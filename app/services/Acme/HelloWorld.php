@@ -6,6 +6,10 @@ use Zenith\SOAP\Request;
 use Zenith\SOAP\Response;
 use Zenith\Exception\SOAPServiceException;
 
+/**
+ * @Provider Zenith\IoC\Provider\ViewServiceProvider
+ * @Provider Zenith\IoC\Provider\LoggerServiceProvider
+ */
 class HelloWorld extends SOAPService {
 	/**
 	 * Generic response
